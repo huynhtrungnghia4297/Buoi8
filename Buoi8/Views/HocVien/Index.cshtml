@@ -1,0 +1,53 @@
+﻿@model Buoi8.Models.HocVien
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h4>HocVien</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaSo" class="control-label"></label>
+                <input asp-for="MaSo" class="form-control" />
+                <span asp-validation-for="MaSo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenHocVien" class="control-label"></label>
+                <input asp-for="TenHocVien" class="form-control" />
+                <span asp-validation-for="TenHocVien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SDT" class="control-label"></label>
+                <input asp-for="SDT" class="form-control" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiemTB" class="control-label"></label>
+                <input asp-for="DiemTB" class="form-control" />
+                <span asp-validation-for="DiemTB" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Gioitinh" /> @Html.DisplayNameFor(model => model.Gioitinh)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="Ghi" value="Ghi File Text" class="btn btn-primary" />
+                <input type="submit" name="Ghi" value="Ghi File Json" class="btn btn-success" />
+                <a  class="btn btn-info" asp-action="DocFileText">Đọc File Text</a>
+                <a  class="btn btn-info" asp-action="DocFileJson">Đọc File Json</a>
+            </div>
+        </form>
+    </div>
+</div>
+@*@section Scripts{ @await Html.RenderPartialAsync}*@
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
